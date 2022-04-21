@@ -11,41 +11,43 @@ public class HlavniProgram {
         zofka = new Turtle();
 
         // priprava zofky na kresleni
-        zofka.setLocation(100, 100);
+        zofka.setLocation(100, 200);
         zofka.setPenWidth(5);
 
         //ctverec
-        nakresliCtverec(zofka, 50.0, Color.orange);
+        //nakresliCtverec(zofka, 50.0, Color.orange);
 
         // nova zelva tyna
         Turtle tyna;
         tyna = new Turtle();
-        tyna.setLocation(250, 250);
-        tyna.setPenColor(Color.RED);
+        tyna.setLocation(550, 200);
         tyna.setPenWidth(5);
 
         //obdelnik
-        nakresliObdelnik(tyna, 50.0, 75.0, Color.pink);
+        //nakresliObdelnik(tyna, 50.0, 75.0, Color.pink);
 
         //zofka jde kreslit trojuhelnik
-        zofka.setLocation(100, 300);
+        //zofka.setLocation(100, 300);
 
         //rovnostranny trojuhelnik
-        nakresliRovnostrannyTrojuhelnik(zofka, 80.0, Color.gray);
+        //nakresliRovnostrannyTrojuhelnik(zofka, 80.0, Color.gray);
 
         //priprava tyny na kresleni kolecka
-        tyna.setLocation(450, 200);
+        //tyna.setLocation(450, 200);
 
         //kolecko
-        nakresliKolecko(tyna, 10.0, Color.MAGENTA);
+        //nakresliKolecko(tyna, 20.0, Color.MAGENTA);
+
+        //zmrzlina
+
 
 
     }
 
-    private void nakresliKolecko(Turtle turtle, double delkaStrany, Color barva) {
+    private void nakresliKolecko(Turtle turtle, double polomer, Color barva) {
         turtle.setPenColor(barva);
         for (int l = 0; l < 36; l++) {
-            turtle.move(delkaStrany);
+            turtle.move((2*3.14159*polomer)/36);
             turtle.turnRight(10);
         }
     }
