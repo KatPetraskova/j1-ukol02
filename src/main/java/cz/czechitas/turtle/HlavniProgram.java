@@ -4,6 +4,8 @@ import cz.czechitas.turtle.engine.*;
 
 import java.awt.*;
 
+import static java.lang.Math.sqrt;
+
 public class HlavniProgram {
 
     public void main(String[] args) {
@@ -39,10 +41,51 @@ public class HlavniProgram {
         //nakresliKolecko(tyna, 20.0, Color.MAGENTA);
 
         //zmrzlina
+        nakresliKolecko(zofka, 50.0, Color.ORANGE);
+        zofka.setLocation(100.0, 205.0);
+        zofka.turnRight(90);
+        nakresliRovnostrannyTrojuhelnik(zofka, 100.0, Color.ORANGE);
 
+        //snehulak
+        nakresliKolecko(tyna, 50.0, Color.BLACK);
+        tyna.setLocation(525.0, 325.0);
+        nakresliKolecko(tyna, 75.0, Color.BLACK);
+        tyna.setLocation(500.0, 500.0);
+        nakresliKolecko(tyna, 100.0, Color.BLACK);
+        tyna.setLocation(475.0, 325.0);
+        nakresliKolecko(tyna, 25.0, Color.BLACK);
+        tyna.setLocation(675.0, 325.0);
+        nakresliKolecko(tyna, 25.0, Color.BLACK);
 
+        //priprava na masinku
+        zofka.setLocation(825.0, 300);
+        zofka.turnLeft(90);
+
+        //masinka
+        nakresliPravouhlyTrojuhelnik(zofka, 50.0, Color.BLUE);
+        zofka.setLocation(1000.0, 275);
+        nakresliObdelnik(zofka, 125.0, 75.0, Color.BLUE);
+        zofka.setLocation(915.0, 320);
+        nakresliKolecko(zofka, 20, Color.BLUE);
+        zofka.setLocation(960.0, 320);
+        nakresliKolecko(zofka, 20, Color.BLUE);
+        zofka.setLocation(1080.0, 275);
+        nakresliObdelnik(zofka, 80.0, 120.0, Color.BLUE);
+        zofka.setLocation(1045.0, 315);
+        nakresliKolecko(zofka, 40.0, Color.BLUE);
 
     }
+
+    private void nakresliPravouhlyTrojuhelnik(Turtle turtle, double delkaStrany, Color barva) {
+        turtle.setPenColor(barva);
+        turtle.turnRight(45);
+        turtle.move(sqrt((delkaStrany*delkaStrany)+(delkaStrany*delkaStrany)));
+        turtle.turnRight(135);
+        turtle.move(delkaStrany);
+        turtle.turnRight(90);
+        turtle.move(delkaStrany);
+    }
+
 
     private void nakresliKolecko(Turtle turtle, double polomer, Color barva) {
         turtle.setPenColor(barva);

@@ -76,7 +76,7 @@ public class Board {
                 onWindowClosing();
             }
         });
-        window.setSize((int) (screenSize.width * 0.7), (int) (screenSize.height*0.7));
+        window.setSize((int) (screenSize.width * 0.9), (int) (screenSize.height*0.7));
         window.setLocationRelativeTo(null);
         window.setVisible(true);
     }
