@@ -41,39 +41,51 @@ public class HlavniProgram {
         //nakresliKolecko(tyna, 20.0, Color.MAGENTA);
 
         //zmrzlina
-        nakresliKolecko(zofka, 50.0, Color.ORANGE);
-        zofka.setLocation(100.0, 205.0);
-        zofka.turnRight(90);
-        nakresliRovnostrannyTrojuhelnik(zofka, 100.0, Color.ORANGE);
+        nakresliZmrzlinu(zofka);
 
         //snehulak
-        nakresliKolecko(tyna, 50.0, Color.BLACK);
-        tyna.setLocation(525.0, 325.0);
-        nakresliKolecko(tyna, 75.0, Color.BLACK);
-        tyna.setLocation(500.0, 500.0);
-        nakresliKolecko(tyna, 100.0, Color.BLACK);
-        tyna.setLocation(475.0, 325.0);
-        nakresliKolecko(tyna, 25.0, Color.BLACK);
-        tyna.setLocation(675.0, 325.0);
-        nakresliKolecko(tyna, 25.0, Color.BLACK);
+        nakresliSnehulaka(tyna);
 
         //priprava na masinku
         zofka.setLocation(825.0, 300);
         zofka.turnLeft(90);
 
         //masinka
-        nakresliPravouhlyTrojuhelnik(zofka, 50.0, Color.BLUE);
-        zofka.setLocation(1000.0, 275);
-        nakresliObdelnik(zofka, 125.0, 75.0, Color.BLUE);
-        zofka.setLocation(915.0, 320);
-        nakresliKolecko(zofka, 20, Color.BLUE);
-        zofka.setLocation(960.0, 320);
-        nakresliKolecko(zofka, 20, Color.BLUE);
-        zofka.setLocation(1080.0, 275);
-        nakresliObdelnik(zofka, 80.0, 120.0, Color.BLUE);
-        zofka.setLocation(1045.0, 315);
-        nakresliKolecko(zofka, 40.0, Color.BLUE);
+        nakresliMasinku(zofka);
 
+    }
+
+    private void nakresliMasinku(Turtle turtle) {
+        nakresliPravouhlyTrojuhelnik(turtle, 50.0, Color.BLUE);
+        turtle.setLocation(1000.0, 275);
+        nakresliObdelnik(turtle, 125.0, 75.0, Color.BLUE);
+        turtle.setLocation(915.0, 320);
+        nakresliKolecko(turtle, 20, Color.BLUE);
+        turtle.setLocation(960.0, 320);
+        nakresliKolecko(turtle, 20, Color.BLUE);
+        turtle.setLocation(1080.0, 275);
+        nakresliObdelnik(turtle, 80.0, 120.0, Color.BLUE);
+        turtle.setLocation(1045.0, 315);
+        nakresliKolecko(turtle, 40.0, Color.BLUE);
+    }
+
+    private void nakresliSnehulaka(Turtle turtle) {
+        nakresliKolecko(turtle, 50.0, Color.BLACK);
+        turtle.setLocation(525.0, 325.0);
+        nakresliKolecko(turtle, 75.0, Color.BLACK);
+        turtle.setLocation(500.0, 500.0);
+        nakresliKolecko(turtle, 100.0, Color.BLACK);
+        turtle.setLocation(475.0, 325.0);
+        nakresliKolecko(turtle, 25.0, Color.BLACK);
+        turtle.setLocation(675.0, 325.0);
+        nakresliKolecko(turtle, 25.0, Color.BLACK);
+    }
+
+    private void nakresliZmrzlinu(Turtle turtle) {
+        nakresliKolecko(turtle, 50.0, Color.ORANGE);
+        turtle.setLocation(100.0, 205.0);
+        turtle.turnRight(90);
+        nakresliRovnostrannyTrojuhelnik(turtle, 100.0, Color.ORANGE);
     }
 
     private void nakresliPravouhlyTrojuhelnik(Turtle turtle, double delkaStrany, Color barva) {
